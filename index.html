@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>家居网</title>
+    
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <a name="home"></a>
+        <header>
+            <p><i class="fa fa-phone"></i>123 4567 89</p>
+            <form action="get">
+                <label for="search">
+                    <input type="search" id="search" autocomplete="true" placeholder="search">
+                </label>
+                <button class="btn" type="button"><i class="fa fa-search"></i></button>
+            </form> 
+        </header>
+        <nav>
+            <h1><a href="index.html">Brand</a></h1>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        <!-- ads -->
+        <section id="ads-section">
+            <figure>
+                <img src="img/1.jpg" alt="">
+                <figcaption>
+                    <h2>Let Your Home</h2>
+                    <kbd>more comfort</kbd>
+                </figcaption>
+            </figure>
+        </section>
+        <!-- gallery -->
+        <a name="gallery"></a>
+        <section id="gallery-section">
+            <h1 class="title">Gallery</h1>
+            <ul class="gallery-lists clearfix">
+                <li><a href="javascript:;"><img src="img/gallery1.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/gallery2.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/gallery3.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/gallery4.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/gallery5.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/gallery6.jpg" alt=""></a></li>
+            </ul>
+        </section>
+        <!-- about -->
+        <a name="about"></a>
+        <section id="about-section">
+            <h1 class="title">About Us</h1>
+            <div class="about-content">
+                <div class="section-details">
+                    <h2>Hello! We’are Decorate</h2>
+                    <p>Earlier this year we gave ourselves a challenge: to re-imagine the traditional approach to packaging coffee and create something that we could share with our clients and friends - and so, Wishbone Brew was born.</p>
+                    <p>Cu tibique omnesque platonem sea. Cu assum oportere vix, exerci definiebas vel id. Duo suas ocurreret imperdiet ad. Eum in porro scripta. Mea an ceteros fierent, aliquid propriae expetendis et duo. Mazim dictas legendos no usu, in debitis omittantur sea. Ei eos reque partem.</p>
+                </div>
+                <figure>
+                    <img src="img/2.jpg" alt="">
+                </figure>
+            </div>
+        </section>
+        <a name="contact"></a>
+        <section id="contact-section">
+            <h1 class="title">Contact Us</h1>
+            <form action="" method="post" class="user-form">
+            <h1>Contact Form
+            <span>Please fill all the texts in the fields.</span>
+            </h1>
+            <label>
+                <span>Your Name :</span>
+                <input id="name" type="text" name="name" placeholder="Your Full Name" />
+            </label>
+            <label>
+                <span>Your Email :</span>
+                <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+            </label>
+            <label>
+                <span>Message :</span>
+                <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+            </label>
+            <label>
+                <span>&nbsp;</span>
+                <input type="button" class="button" value="Send" />
+            </label>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <span>© Copyright</span>
+        <span>家居网</span>
+    </footer>
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script>
+        $(function(){
+            $('.gallery-lists img').each(function() {
+                createCanvas(this);
+            });
+ 
+        function createCanvas(image) {
+            var canvas = document.createElement('canvas');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+                canvas.width = image.width;
+                canvas.height = image.height;
+
+                ctx.drawImage(image,0,0);
+
+                var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height),
+                // data 属性返回一个对象，该对象包含指定的 ImageData 对象的图像数据
+                pixelData = imageData.data;
+
+                for(var y=0;y<canvas.height;y++){
+                    for(var x=0;x<canvas.width;x++){
+                        var i = (y*4*canvas.width)+(x*4);
+                        var red = pixelData[i];
+                        var green = pixelData[i+1];
+                        var blue = pixelData[i+2];
+
+                        var grayScale = (red * 0.3) + (green * 0.59) + (blue * .11);
+                        pixelData[i] = grayScale;
+                        pixelData[i + 1] = grayScale;
+                        pixelData[i + 2] = grayScale;
+                    }
+                }
+
+                ctx.putImageData(imageData,0,0,0,0,imageData.width,imageData.height);
+                image.parentNode.insertBefore(canvas, image);
+            }
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 10px;
+}
+body{
+    font-size: 1.6em;
+    font-family:cursive,Helvetica, Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: #287;
+    font-weight: bold;
+}
+.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { zoom:1; }
+.clearit { clear:both; height:0; font-size:0; overflow:hidden; }
+.container{
+    padding: 0 5%; 
+}
+/*header begin*/
+header{
+    background-color:#e5e9df;
+    margin-top: 3em;
+    padding: 0 5% ;
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+/*header end*/
+/*nav begin*/
+nav{
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav>ul{
+    display: table;
+}
+nav>ul li{
+    display: table-cell;
+}
+nav>ul a{
+    display: inline-block;
+    color: #524B46;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    letter-spacing: 0.2em;
+}
+nav>ul a:hover{
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: linear 2s;
+}
+#search{
+    border: 0 none;
+    width: 20em;
+    height: 1.9em;
+    padding-left: 0.5em;
+}
+.btn{
+    border: 0 none;
+    cursor: pointer;
+}
+/*nav end*/
+/*ads-section*/
+figure{
+    position: relative;
+}
+figure>img{
+    width: 100%;
+    z-index: 0;
+}
+figcaption{
+    width: 30%;
+    background: rgba(255,0,0,.5);
+    position: absolute;
+    right: -1.6em;
+    bottom: 1em;
+    color: #fff;
+    padding: 2em 4em;
+    border-right: 2em solid #333;
+}
+/*ads-section end*/
+/*#gallery-section begin*/
+#gallery-section{
+    margin: 3em 0;
+}
+.gallery-lists{
+    list-style: none;
+}
+.gallery-lists li{
+    width: 370px;
+    height: 240px;
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.gallery-lists img{
+    width: 100%;
+    height: 100%;
+}
+canvas{
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    transition: opacity 1.5s .5s;
+}
+.gallery-lists li:hover canvas{
+    opacity: 0;
+}
+/*about-setion begin*/
+#about-section{
+    margin:3em 0;
+}
+.about-content{
+    display: flex;
+    justify-content: space-between;
+}
+.title{
+    text-align: center;
+    color: #E20C0C;
+}
+.section-details{
+    width: 45%;
+    line-height: 2.4rem;
+    color: #777;
+}
+/*about-setion end*/
+/*contact-setion begin*/
+.user-form {
+    margin: 2rem auto;
+    background: #F8F8F8;
+    padding: 30px 30px 20px 30px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.user-form h1 {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 20px 0px 20px 40px;
+    display: block;
+    margin: -30px -30px 10px -30px;
+    color: #FFF;
+    background: #333;
+    text-shadow: 1px 1px 1px #949494;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-bottom:1px solid #89AF4C;
+}
+.user-form h1>span {
+    display: block;
+    font-size: 11px;
+    color: #FFF;
+}
+.user-form label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.user-form label>span {
+    float: left;
+    margin-top: 10px;
+    color: #5E5E5E;
+}
+.user-form input[type="text"], .user-form input[type="email"], .user-form textarea, .user-form select {
+    color: #555;
+    height: 30px;
+    line-height:15px;
+    width: 100%;
+    padding: 0px 0px 0px 10px;
+    margin-top: 2px;
+    border: 1px solid #E5E5E5;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    font: normal 14px/14px Arial, Helvetica, sans-serif;
+}
+.user-form textarea{
+    height:100px;
+    padding-top: 10px;
+}
+.user-form .button {
+    background-color: #333;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+    cursor: pointer;
+}
+.user-form .button:hover {
+    background-color:#d20404;
+}
+/*footer*/
+footer{
+    font-family:  Arial, sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    background: #d20404;
+}
